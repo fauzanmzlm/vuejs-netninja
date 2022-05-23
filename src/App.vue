@@ -1,26 +1,21 @@
 <template>
   <h1>{{ title }}</h1>
-  <div>
-    <input type="text" ref="name" value="dasdsa">
-    <button @click="handleClick">Click</button>
-  </div>
+  <ModalComponent />
 </template>
 
 <script>
+import ModalComponent from './components/ModalComponent.vue'
+
 export default {
   name: 'App',
+  components: {
+    ModalComponent
+  },
   data() {
     return {
       title: 'My First Vue App :)'
     }
   },
-  methods: {
-    handleClick() {
-      console.log(this.$refs.name)
-      this.$refs.name.classList.add('active')
-      this.$refs.name.focus()
-    }
-  }
 }
 </script>
 
